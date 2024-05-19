@@ -1,6 +1,7 @@
 Quando eu comecei esse codigo apenas Deus e eu sabiamos o que estava acontecendo
 agora depois de aproximadamente 7 horas seguidas codando, apenas Deus sabe o que esta acontecendo
 caso alguem for maluco de mexer nesse codigo (isso é um aviso pro eu do futuro), não façam isso.
+
 ------------------------------- Horas Gastas nesse codigo: 7 horas ---------------------------------
 
 
