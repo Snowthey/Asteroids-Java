@@ -26,7 +26,22 @@ public class InterrupcaoTeclado extends KeyAdapter {
             case KeyEvent.VK_D:
                 nave.girarDireita();
                 break;
-            case KeyEvent.VK_S:
+        }
+
+        Jogo.Mutex.release();
+    }
+
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        try {
+            Jogo.Mutex.acquire();
+        } catch (InterruptedException e1) {
+            e1.printStackTrace();
+        }
+
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_W:
                 nave.desacelerar();
                 break;
         }

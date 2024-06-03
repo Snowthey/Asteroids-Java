@@ -13,5 +13,6 @@ public class Principal {
         janelaprincipal.setVisible(true);
 
         new Thread(game).start();
+
     }
 }
