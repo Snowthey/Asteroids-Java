@@ -118,22 +118,11 @@ public class Jogo extends JPanel implements Runnable {
 
 
     private void tocarSomTiro() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        
         Clip clip = AudioSystem.getClip();
-
-        
         AudioInputStream inputStream = AudioSystem.getAudioInputStream(this.getClass().getResource("/tiro.wav"));
-
-        
         clip.open(inputStream);
-
-        
         FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-
-        
-        gainControl.setValue(-10.0f); 
-
-        
+        gainControl.setValue(-10.0f);
         clip.start();
     }
 

@@ -151,11 +151,8 @@ public class Nave {
                 Clip clip = AudioSystem.getClip();
                 AudioInputStream inputStream = AudioSystem.getAudioInputStream(this.getClass().getResource("/grito.wav"));
                 clip.open(inputStream);
-
                 FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-
                 gainControl.setValue(-15.0f);
-
                 clip.start();
                 soundPlayed = true;
             }
