@@ -221,7 +221,7 @@ public class Jogo extends JPanel implements Runnable {
     }
 
     private void adicionarMeteoros() {
-        while (asteroides.size() < 10) {
+        while (asteroides.size() < 15) {
             Asteroids asteroide = new Asteroids();
             asteroide.criarNovoAsteroide();
             asteroides.add(asteroide);
