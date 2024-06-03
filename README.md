@@ -31,3 +31,4 @@ IMPORTANTE!!!
 So utilize o botão de reiniciar se o jogo acabar
 se não ele buga inteiro. 
 
+Se o jogo ficar lento, abre e fecha dnovo ou mata a nava e reinicia
