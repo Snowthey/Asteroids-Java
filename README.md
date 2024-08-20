@@ -6,8 +6,8 @@ caso alguem for maluco de mexer nesse codigo (isso é um aviso pro eu do futuro)
 
 ------------------------------- VERSÃO -------------------------------
 
-VERSÂO: 1.0.0
-Essa é a primeira versão oficial do jogo, proximas atualizações virão
+VERSÂO: 1.0.1
+Jar agora funciona corretamente
 
 ------------------------------- Controles -------------------------------
 
@@ -22,8 +22,8 @@ O jogo demora 60 Segundos
 
 ------------------------------- Atualizações -------------------------------
 
-O botão de reiniciar foi adicionado
-
+Jar agora funciona corretamente se o computador tiver JAVA SDK 
+Proximas atualizações: melhoria dos asteroids, adicionar menu iniciar e combustivel que aumenta o tempo
 
 
 IMPORTANTE!!!
