@@ -32,7 +32,8 @@ public class Jogo extends JPanel implements Runnable {
         setPreferredSize(new Dimension(LARGURA_TELA, ALTURA_TELA));
         setBackground(Color.BLACK);
         setFocusable(true);
-        objNave = new Nave(LARGURA_TELA / 2, ALTURA_TELA / 2, 50, 50, "C:/Users/sherl/IdeaProjects/Asteroids/src/teste.png");
+        String caminhoImagem = "/res/teste.png"; // O caminho deve começar com "/"
+        objNave = new Nave(LARGURA_TELA / 2, ALTURA_TELA / 2, 50, 50, caminhoImagem);
         objAsteroids = new Asteroids();
         addKeyListener(new InterrupcaoTeclado(objNave));
         score = 0;
@@ -41,6 +42,7 @@ public class Jogo extends JPanel implements Runnable {
         Mutex = new Semaphore(1);
         tiros = new ArrayList<>();
         contadorTempo = TEMPO_TOTAL;
+        Recursos.carregarRecursos();  // Pré-carregue todos os recursos
 
         JButton reiniciarJogoButton = new JButton("Reiniciar Jogo");
         reiniciarJogoButton.addActionListener(new ActionListener() {
@@ -52,9 +54,9 @@ public class Jogo extends JPanel implements Runnable {
         add(reiniciarJogoButton);
 
         barraCombustivel = new JProgressBar();
-        barraCombustivel.setMinimum(0); 
-        barraCombustivel.setMaximum(TEMPO_TOTAL); 
-        barraCombustivel.setValue(TEMPO_TOTAL); 
+        barraCombustivel.setMinimum(0);
+        barraCombustivel.setMaximum(TEMPO_TOTAL);
+        barraCombustivel.setValue(TEMPO_TOTAL);
         setLayout(new FlowLayout(FlowLayout.LEFT));
         JLabel rotuloCombustivel = new JLabel("Combustível");
         rotuloCombustivel.setForeground(Color.WHITE);
@@ -137,7 +139,7 @@ public class Jogo extends JPanel implements Runnable {
         }
 
         if (!tiros.isEmpty()) {
-            ArrayList<Tiro> tirosCopy = new ArrayList<>(tiros); 
+            ArrayList<Tiro> tirosCopy = new ArrayList<>(tiros);
             for (Tiro tiro : tirosCopy) {
                 tiro.desenhar(g);
             }
@@ -145,7 +147,7 @@ public class Jogo extends JPanel implements Runnable {
 
         objNave.draw((Graphics2D) g);
 
-        
+
         ArrayList<Asteroids> asteroidesCopy = new ArrayList<>(asteroides);
         for (Asteroids asteroide : asteroidesCopy) {
             asteroide.Desenhar(g);
@@ -243,7 +245,7 @@ public class Jogo extends JPanel implements Runnable {
         for (Tiro tiro : tiros) {
             tiro.mover();
 
-            
+
             if (tiro.getY() < 0 || tiro.getY() > ALTURA_TELA && tiro.getX() < 0 || tiro.getX() > LARGURA_TELA) {
                 tirosParaRemover.add(tiro);
             }
